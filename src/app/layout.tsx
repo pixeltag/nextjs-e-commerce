@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={openSans.className}>
         <Header />
         <PageHead />
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-20">
+        <div className="items-center mx-auto max-w-screen-xl py-20">
           {children}
         </div>
         <Footer />
