@@ -8,7 +8,7 @@
     "sale": true,
     "categories": ["Canoenig", "Equipment"],
     "tags": ["board", "surf", "suriging"],
-    "images": ["/images/pro00.png", "/images/pro01.png", "/images/pro02.png"]
+    "images": ["/images/pro00.png", "/images/pro03.png", "/images/pro02.png"]
   },
   {
     "id": 1,
@@ -19,7 +19,7 @@
     "sale": true,
     "categories": ["Canoenig", "Equipment"],
     "tags": ["board", "surf", "suriging"],
-    "images": ["/images/pro01.png", "/images/pro01.png", "/images/pro02.png"]
+    "images": ["/images/pro01.png", "/images/pro05.png", "/images/pro03.png"]
   },
   {
     "id": 2,
@@ -30,7 +30,7 @@
     "sale": false,
     "categories": ["Scubadiving", "Equipment"],
     "tags": ["board", "surf", "suriging"],
-    "images": ["/images/pro02.png", "/images/pro01.png", "/images/pro02.png"]
+    "images": ["/images/pro02.png", "/images/pro00.png", "/images/pro04.png"]
   },
   {
     "id": 3,
@@ -41,7 +41,7 @@
     "sale": false,
     "categories": ["Canoenig", "Equipment"],
     "tags": ["board", "surf", "suriging"],
-    "images": ["/images/pro03.png", "/images/pro01.png", "/images/pro02.png"]
+    "images": ["/images/pro03.png", "/images/pro00.png", "/images/pro02.png"]
   },
   {
     "id": 4,
