@@ -12,5 +12,4 @@ export async function GET(req: Request) {
     } else {
         return NextResponse.json(null)
     }
-    // r
 }
