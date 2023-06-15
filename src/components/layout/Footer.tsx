@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="bg-black text-white pt-12 pb-40">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
-                    <div className="grid grid-cols-2 gap-4 sm:gap-14 sm:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-14 sm:grid-cols-2 lg:grid-cols-4">
                         <div>
                             <h2 className="mb-12 text-sm font-semibold text-gray-900 uppercase">About</h2>
                             <ul className="text-gray-200 text-xs">

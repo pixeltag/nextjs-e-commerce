@@ -12,7 +12,7 @@ const Header = () => {
                     <Link href="./" className="flex items-center">
                         <Image
                             src="/images/logo.png"
-                            className="mr-3 h-6 sm:h-9"
+                            className="mr-3"
                             width={219}
                             height={41}
                             alt="Bloowatch"

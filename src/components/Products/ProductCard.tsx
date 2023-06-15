@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { currencyFormat } from '@/utilities';
 import { Product } from '@/types';
 
-export const ProductCard = ({ title, images, sale, categories, price }: Product) => {
+export const ProductCard = ({ id, title, images, sale, categories, price }: Product) => {
     return (
         <div className="bg-white mb-4">
             <div className='overflow-hidden relative pt-16'>
@@ -18,7 +18,7 @@ export const ProductCard = ({ title, images, sale, categories, price }: Product)
             <a href="#">
             </a>
             <div className="p-5 text-center">
-                <Link href="./">
+                <Link href={{ pathname: '/product', query: { id } }}>
                     <h5 className="mb-2 text-xl font-medium tracking-tight text-center">{title}</h5>
                 </Link>
                 <p className="text-blue text-sm text-center mb-8">

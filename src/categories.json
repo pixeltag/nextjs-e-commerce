@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "title": "Boards"
+  },
+  {
+    "id": 1,
+    "title": "Canoenig"
+  },
+  {
+    "id": 2,
+    "title": "Equipment"
+  },
+  {
+    "id": 3,
+    "title": "Paddling"
+  },
+  {
+    "id": 4,
+    "title": "Rental"
+  },
+  {
+    "id": 5,
+    "title": "Scubadiving"
+  },
+  {
+    "id": 6,
+    "title": "Surfing"
+  }
+]
