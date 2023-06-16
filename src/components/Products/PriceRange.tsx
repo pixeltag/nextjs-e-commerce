@@ -1,29 +1,33 @@
 'use client'
+import { currencyFormat } from '@/utilities';
 import Slider from '@mui/material/Slider';
-import { useState } from 'react';
-
-function valuetext(value: number) {
-    return `${value}°C`;
+interface PriceRangeType {
+    price: number[];
+    onPriceChange: (e: number[]) => void
 }
 
-export const PriceRange = () => {
-    const [value, setValue] = useState<number[]>([0, 200]);
+export const PriceRange = ({ price, onPriceChange }: PriceRangeType) => {
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
-        setValue(newValue as number[]);
-    };
     return (
         <div className='mt-12'>
             <label className='uppercase block font-medium mb-2'>Price</label>
             <Slider
-                getAriaLabel={() => 'Temperature range'}
-                value={value}
+                value={price}
                 size="small"
+                min={10}
+                max={500}
                 color='primary'
-                onChange={handleChange}
+                onChange={(e, v: any) => onPriceChange(v)}
                 valueLabelDisplay="auto"
-                getAriaValueText={valuetext}
             />
+            <div className='flex w-full justify-between'>
+                <div>
+                    {currencyFormat(price[0])}
+                </div>
+                <div>
+                    {currencyFormat(price[1])}
+                </div>
+            </div>
         </div>
     )
 }

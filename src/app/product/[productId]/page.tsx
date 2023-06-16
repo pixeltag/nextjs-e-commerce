@@ -2,8 +2,7 @@
 import PageHead from '@/components/layout/PageHead';
 import { Product } from '@/types';
 import { currencyFormat } from '@/utilities';
-import { useSearchParams } from 'next/navigation';
-import React, { use, useState } from 'react'
+import React, { use } from 'react'
 
 import QuantityCounter from '@/components/Products/QuantityCounter';
 import ImageSlider from '@/components/Products/ImageSlider';
@@ -12,14 +11,13 @@ import ProductsList from '@/components/Products/ProductsList';
 
 async function fetchProduct(productId: string | null) {
     try {
-        const req = await fetch(`http://localhost:3000/api/product?id=${productId}`);
+        const req = await fetch(`http://localhost:3000/api/product?id=${productId}`, { cache: 'no-store' });
         const product: Product = await req.json();
         return product;
     } catch (error) {
         throw error
     }
 }
-
 
 async function fetchRelatedProducts() {
     try {
