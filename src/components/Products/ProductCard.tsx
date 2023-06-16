@@ -18,7 +18,7 @@ export const ProductCard = ({ id, title, images, sale, categories, price }: Prod
             <a href="#">
             </a>
             <div className="p-5 text-center">
-                <Link href={{ pathname: '/product', query: { id } }}>
+                <Link href={{ pathname: `/product/${id}` }}>
                     <h5 className="mb-2 text-xl font-medium tracking-tight text-center">{title}</h5>
                 </Link>
                 <p className="text-blue text-sm text-center mb-8">
