@@ -1,23 +1,12 @@
 "use client"
 import PageHead from "@/components/layout/PageHead";
 import QuantityCounter from "@/components/Products/QuantityCounter";
-import { Cart } from "@/types";
+import { useGlobalContext } from "@/context/store";
 import { currencyFormat } from "@/utilities";
 import Image from "next/image";
-import { use } from "react";
 
-async function fetchCart() {
-    try {
-        const req = await fetch(`http://localhost:3000/api/cart`);
-        const cart: Cart[] = await req.json();
-        return cart;
-    } catch (error) {
-        throw error
-    }
-}
-
-const page = () => {
-    const carts = use(fetchCart());
+function Cart() {
+    const { cart, setCart } = useGlobalContext();
     return (
         <>
             <PageHead title='Cart' />
@@ -45,26 +34,26 @@ const page = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {carts && carts.map(cart => (
-                                <tr className="bg-white dark:bg-gray-800 text-md font-bold border-b border-lightGray" key={cart.id}>
+                            {cart && cart.map(item => (
+                                <tr className="bg-white dark:bg-gray-800 text-md font-bold border-b border-lightGray" key={item.id}>
                                     <th scope="row" className="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <button>X</button>
                                     </th>
                                     <td className="px-6 py-8">
                                         <div className="flex items-center">
-                                            <Image src={cart.images[0]} width="30" height="30" alt={cart.title} />
-                                            <h4 className="ms-6">{cart.title}</h4>
+                                            <Image src={item.images[0]} width="30" height="30" alt={item.title} />
+                                            <h4 className="ms-6">{item.title}</h4>
 
                                         </div>
                                     </td>
                                     <td className="px-6 py-8">
-                                        {currencyFormat(cart.price)}
+                                        {currencyFormat(item.price)}
                                     </td>
                                     <td className="px-6 py-8">
                                         <QuantityCounter />
                                     </td>
                                     <td className="px-6 py-8">
-                                        {currencyFormat(cart.price)}
+                                        {currencyFormat(item.price)}
                                     </td>
                                 </tr>
 
@@ -137,4 +126,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default Cart;

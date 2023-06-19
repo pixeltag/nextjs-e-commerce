@@ -28,17 +28,17 @@ const Header = () => {
                     <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-28 lg:mt-0">
                             <li>
-                                <Link href="/dashboard" className="text-lg uppercase">Shop</Link>
+                                <Link href="/" className="text-lg uppercase">Shop</Link>
                             </li>
                             <li>
-                                <Link href="/dashboard" className="text-lg uppercase">Blog</Link>
+                                <Link href="/" className="text-lg uppercase">Blog</Link>
                             </li>
                             <li>
-                                <Link href="/dashboard" className="text-lg uppercase">Search</Link>
+                                <Link href="/" className="text-lg uppercase">Search</Link>
                             </li>
                             <li className='flex items-center'>
                                 <Cart className="mr-2" />
-                                <Link href="/dashboard" className="text-lg uppercase">Cart</Link>
+                                <Link href="/cart" className="text-lg uppercase">Cart</Link>
                             </li>
                         </ul>
                     </div>

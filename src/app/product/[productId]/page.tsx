@@ -8,6 +8,7 @@ import QuantityCounter from '@/components/Products/QuantityCounter';
 import ImageSlider from '@/components/Products/ImageSlider';
 import ProductTabs from '@/components/Products/ProductTabs';
 import ProductsList from '@/components/Products/ProductsList';
+import { useGlobalContext } from '@/context/store';
 
 async function fetchProduct(productId: string | null) {
     try {
@@ -32,6 +33,8 @@ async function fetchRelatedProducts() {
 function Page(props: any) {
     const product = use(fetchProduct(props.params.productId));
     const RelatedProducts = use(fetchRelatedProducts());
+    const { cart, setCart } = useGlobalContext();
+
 
     return (
         <>
@@ -51,7 +54,8 @@ function Page(props: any) {
                         <div className='flex mt-12'>
                             <QuantityCounter />
                             <div>
-                                <button className='uppercase font-medium text-lg border-2 px-8 py-2 m-4 ms-8 hover:bg-black hover:text-white'>Add to cart</button>
+                                <button className='uppercase font-medium text-lg border-2 px-8 py-2 m-4 ms-8 hover:bg-black hover:text-white'
+                                    onClick={() => setCart((prev) => [...prev, product])}>Add to cart</button>
                             </div>
                         </div>
 

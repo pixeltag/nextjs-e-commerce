@@ -50,7 +50,7 @@ export default function Home() {
 
     if (sort === '0') {
       return data;
-    } else if (sort === '1') {
+    } else if (sort === 'asce') {
       data = data.sort((a, b) => {
         if (a.title < b.title)
           return -1;
@@ -58,7 +58,7 @@ export default function Home() {
           return 1;
         return 0;
       })
-    } else if (sort === '2') {
+    } else if (sort === 'desc') {
       data = data.sort((a, b) => {
         if (a.title > b.title)
           return -1;
@@ -88,8 +88,8 @@ export default function Home() {
           <div className='text-right'>
             <select className='text-sm text-darkGray focus:ring-0' onChange={(e) => setSort(e.currentTarget.value)} value={sort}>
               <option value="0">Default sorting</option>
-              <option value="1">Ascending</option>
-              <option value="2">Descending</option>
+              <option value="asce">Ascending</option>
+              <option value="desc">Descending</option>
             </select>
           </div>
           <div className='col-span-3 mt-6'>

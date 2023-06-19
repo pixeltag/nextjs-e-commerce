@@ -8,6 +8,7 @@ export interface Product {
     categories: Array<string>;
     tags: Array<string>;
     images: Array<string>;
+    quantity?: number;
 }
 
 export interface Cart {
@@ -21,4 +22,9 @@ export interface Cart {
     tags: Array<string>;
     images: Array<string>;
     quantity: number;
+}
+
+export const QuantityActions = {
+    INCREASE: "INCREASE",
+    DECREASE: "DECREASE"
 }

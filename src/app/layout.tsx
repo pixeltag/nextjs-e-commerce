@@ -2,6 +2,7 @@ import './globals.css'
 import { Open_Sans } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { GlobalContextProvider } from '@/context/store'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSans.className}>
         <Header />
-        {children}
+        <GlobalContextProvider>
+          {children}
+        </GlobalContextProvider>
         <Footer />
       </body>
     </html>
